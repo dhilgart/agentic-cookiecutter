@@ -25,7 +25,7 @@ Answer each question briefly:
 3. What decision was made that a future agent wouldn't know from the code alone?
 4. What went wrong and how was it recovered?
 5. What pattern was reused from a prior learning? (Update its helpful counter.)
-6. Is any entry in `docs/learnings/learnings.md` now wrong or outdated?
+6. Is any entry in `project/learnings/learnings.md` now wrong or outdated?
 
 ### Step 2 — Draft new entries
 
@@ -51,19 +51,19 @@ Scan entries with `helpful` counter ≥ 3. For each:
 
 ### Step 4 — Update learnings.md
 
-Append new entries to `docs/learnings/learnings.md`. Never rewrite existing entries.
+Append new entries to `project/learnings/learnings.md`. Never rewrite existing entries.
 Update counters for referenced entries.
 
 ### Step 5 — Instrumentation check
 
-Review `docs/instrumentation.md` for components touched this session.
+Review `project/instrumentation.md` for components touched this session.
 For each:
 - Are any "broken" criteria met? Flag them.
 - Answer the relevant retrospective questions.
-- If a fallback should be activated, draft an ADR in `docs/decisions/`.
+- If a fallback should be activated, draft an ADR in `project/decisions/`.
 
 ## Output
 
-Updated `docs/learnings/learnings.md` with new entries appended.
+Updated `project/learnings/learnings.md` with new entries appended.
 Optional: proposed additions to `CLAUDE.md` if promotion criteria met.
 Optional: instrumentation flags if "broken" criteria are met.

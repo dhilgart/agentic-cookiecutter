@@ -54,8 +54,8 @@ _Document CLI commands here._
 {{cookiecutter.project_slug}}/
 ├── src/{{cookiecutter.package_name}}/   # Package source
 ├── tests/                               # Test suite
-├── docs/decisions/                      # Architecture Decision Records
-├── docs/learnings/                      # Project learnings log
+├── project/decisions/                    # Architecture Decision Records
+├── project/learnings/                   # Project learnings log
 └── stories/                             # Feature story files
 ```
 
@@ -67,6 +67,6 @@ _Common issues and solutions._
 
 ## Contributing
 
-- ADRs in `docs/decisions/` for significant architectural choices
+- ADRs in `project/decisions/` for significant architectural choices
 - Code quality: ruff + mypy --strict + pytest required
 - See [ARCHITECTURE.md](ARCHITECTURE.md) for conventions

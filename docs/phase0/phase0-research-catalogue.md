@@ -1779,9 +1779,9 @@ The following sources were evaluated but did not add new actionable practices be
 | **Source** | Michael Nygard (ADR pattern) |
 | **Practice** | ADR documents: context, decision, alternatives, consequences. Answers "Why was it done this way?" Numbered, immutable (superseded not edited), checked into git. Code shows WHAT. Comments show HOW. ADRs show WHY. |
 | **Reasoning** | When a new developer asks "Why dataclasses instead of Pydantic for internal types?" the ADR explains reasoning. Without ADRs, this knowledge lives only in heads. AI agents also benefit — when modifying architecture, an agent that reads ADRs understands constraints to preserve. |
-| **Assessment** | ✅ Sound. Cookiecutter includes `docs/decisions/` with ADR template. Our D1-D60 decision log is already ADR-like. |
+| **Assessment** | ✅ Sound. Cookiecutter includes `project/decisions/` with ADR template. Our D1-D60 decision log is already ADR-like. |
 | **Relevance** | 🔴 Direct — cookiecutter deliverable. |
-| **Adopt?** | ✅ Yes — `docs/decisions/` directory with ADR template. |
+| **Adopt?** | ✅ Yes — `project/decisions/` directory with ADR template. |
 
 ### P34.7 — Complete README Template (Synthesized)
 

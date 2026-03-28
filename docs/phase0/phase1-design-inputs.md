@@ -79,7 +79,7 @@ Based on all decisions, the cookiecutter should produce:
 ├── tests/
 │   ├── conftest.py
 │   └── ...
-├── docs/
+├── project/
 │   ├── decisions/                 # ADR infrastructure (D64)
 │   │   └── 0000-template.md
 │   ├── learnings/                 # Learning store (D21, D39, D68)
@@ -126,7 +126,7 @@ Must be minimal. Every line must earn its place. Conventions, not checklists.
 - Review: /code-review runs before PR
 
 ## Learnings
-- See docs/learnings/learnings.md for project-specific patterns.
+- See project/learnings/learnings.md for project-specific patterns.
 ```
 
 **Target: under 50 lines. Under 2K tokens.** (Boris Cherny's team: 2.5K tokens.)
@@ -192,7 +192,7 @@ Confidence scoring (threshold 80/100) filters noise. Only findings above thresho
 
 ## 7. Learning Store (D21, D39, D48, D68, D27)
 
-**File:** `docs/learnings/learnings.md`
+**File:** `project/learnings/learnings.md`
 
 **Format (ACE-informed, D39):**
 

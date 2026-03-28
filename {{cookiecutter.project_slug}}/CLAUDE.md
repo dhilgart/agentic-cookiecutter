@@ -25,4 +25,4 @@ uv run pytest
 - Review: /code-review runs before PR
 
 ## Learnings
-- See docs/learnings/learnings.md for project-specific patterns.
+- See project/learnings/learnings.md for project-specific patterns.

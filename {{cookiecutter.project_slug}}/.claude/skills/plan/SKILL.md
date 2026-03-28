@@ -28,7 +28,7 @@ For each question, ask: **"Can I answer this from existing artifacts?"**
 Artifacts to check, in order:
 1. `ARCHITECTURE.md` — module boundaries, conventions
 2. `UBIQUITOUS_LANGUAGE.md` — correct terminology
-3. `docs/learnings/learnings.md` — past patterns and recoveries
+3. `project/learnings/learnings.md` — past patterns and recoveries
 4. `stories/` — related story files
 5. Code itself — existing patterns to follow
 

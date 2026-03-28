@@ -46,7 +46,7 @@ Score each dimension 0-100. Flag only findings with confidence ≥ 80.
 {count} findings below confidence threshold.
 
 ### Learnings candidates
-{Any pattern worth adding to docs/learnings/learnings.md}
+{Any pattern worth adding to project/learnings/learnings.md}
 ```
 
 ## Reference

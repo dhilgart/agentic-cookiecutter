@@ -8,7 +8,7 @@ Referenced by the compound skill during retrospectives.
 
 ---
 
-## Learning Store (`docs/learnings/learnings.md`)
+## Learning Store (`project/learnings/learnings.md`)
 
 **Broken looks like:**
 - Entries accumulate but are never referenced in planning or review
@@ -110,7 +110,7 @@ dropped and why.
 
 ---
 
-## Mermaid Style Guide (`docs/mermaid-style-guide.md`)
+## Mermaid Style Guide (`project/mermaid-style-guide.md`)
 
 **Broken looks like:**
 - Diagrams don't use the defined encoding channels
@@ -189,5 +189,5 @@ acceptance criteria. Capture which sections were dropped and why.
 1. During the **compound step**, review the sections relevant to work done.
 2. Answer the retrospective questions honestly.
 3. If "broken" criteria are met, consider the fallback.
-4. Log any changes to `docs/learnings/learnings.md`.
-5. If a fallback is activated, record an ADR in `docs/decisions/`.
+4. Log any changes to `project/learnings/learnings.md`.
+5. If a fallback is activated, record an ADR in `project/decisions/`.
