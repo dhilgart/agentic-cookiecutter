@@ -43,20 +43,26 @@ Defined in `cookiecutter.json`. Current variables:
 - `use_hypothesis` — "yes" or "no"
 - `use_mutmut` — "yes" or "no"
 
+## Setup
+
+```bash
+uv sync --all-extras
+```
+
 ## Commands
 
 ```bash
+# Run forge tests
+uv run pytest
+
 # Generate a child from the template
-cookiecutter .
+uv run cookiecutter .
 
 # Generate with defaults (no prompts)
-cookiecutter . --no-input
+uv run cookiecutter . --no-input
 
-# Test: generate + verify
-cd /tmp && cookiecutter /path/to/this/repo --no-input && cd my-project && uv sync && uv run pytest
-
-# Run forge tests
-pytest tests/
+# Test: generate + verify child
+cd /tmp && uv run cookiecutter /path/to/this/repo --no-input && cd my-project && uv sync && uv run pytest
 
 # Cruft compatibility check
 cruft check
