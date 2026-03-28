@@ -1,0 +1,10 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "git commit|git push",
+        "command": "python -c \"import sys; args = ' '.join(sys.argv); assert 'main' not in args, 'Never commit directly to main'\""
+      }
+    ]
+  }
+}

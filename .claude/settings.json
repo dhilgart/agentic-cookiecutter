@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "cookiecutter *",
+      "cruft *",
+      "git status",
+      "git diff *",
+      "git add *",
+      "git commit *",
+      "git checkout -b *",
+      "git push *"
+    ]
+  }
+}
