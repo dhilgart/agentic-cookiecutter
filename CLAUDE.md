@@ -4,13 +4,15 @@ Cookiecutter template for Python projects using an agentic coding workflow with 
 
 ## Project Structure
 
-This is a **cookiecutter repo**, not a regular Python project. Two scopes:
+This is a **forge** — the factory that produces configured workspaces. Three concepts:
 
-- **Cookiecutter scope** (this repo): `cookiecutter.json`, `hooks/`, `docs/`, `tests/`, this file.
-- **Template scope** (child repos): everything inside `{{cookiecutter.project_slug}}/`. This directory IS the generated project. Jinja2 variables like `{{cookiecutter.project_slug}}` get replaced at generation time.
+- **Forge** (this repo): `cookiecutter.json`, `hooks/`, `docs/`, `tests/`, `.claude/`, this file.
+- **Template**: everything inside `{{cookiecutter.project_slug}}/`. This directory IS the generated project. Jinja2 variables like `{{cookiecutter.project_slug}}` get replaced at generation time.
+- **Child**: a repo generated from the template via `cookiecutter .`.
 
-Only edit template scope files when changing what generated repos look like.
-Only edit cookiecutter scope files when changing how generation works.
+Only edit the template when changing what children look like.
+Only edit forge files when changing how generation works.
+See `UBIQUITOUS_LANGUAGE.md` for full terminology.
 
 ## Key Context
 
@@ -26,7 +28,7 @@ Read these before making architectural decisions:
 - Use `dataclass` or `TypedDict` for structured data. Never pass `dict` when shape is known.
 - Template variables in cookiecutter use `{{cookiecutter.variable_name}}` syntax.
 - Jinja2 conditionals for opt-in features: `{% if cookiecutter.use_hypothesis == "yes" %}`.
-- Test the cookiecutter by generating a project and verifying it works, not by running template files directly.
+- Test the cookiecutter by generating a child and verifying it works, not by running template files directly.
 
 ## Cookiecutter Variables
 
@@ -44,7 +46,7 @@ Defined in `cookiecutter.json`. Current variables:
 ## Commands
 
 ```bash
-# Generate a project from the template
+# Generate a child from the template
 cookiecutter .
 
 # Generate with defaults (no prompts)
@@ -53,19 +55,22 @@ cookiecutter . --no-input
 # Test: generate + verify
 cd /tmp && cookiecutter /path/to/this/repo --no-input && cd my-project && uv sync && uv run pytest
 
+# Run forge tests
+pytest tests/
+
 # Cruft compatibility check
 cruft check
 ```
 
 ## Quality Gates
 
-- `ruff format` and `ruff check` on all Python files (template and cookiecutter scope)
-- Generated projects must pass `mypy --strict` and `pytest` after generation
+- `ruff format` and `ruff check` on all Python files (forge and template)
+- Children must pass `mypy --strict` and `pytest` after generation
 - Hook scripts (`hooks/pre_gen_project.py`, `hooks/post_gen_project.py`) must be tested
 
 ## What NOT to Do
 
-- Don't put phase0 research docs inside `{{cookiecutter.project_slug}}/` — they stay in cookiecutter scope.
+- Don't put phase0 research docs inside the template — they stay in the forge.
 - Don't hardcode project-specific values in template files — use `{{cookiecutter.variable}}`.
 - Don't add Python implementation code to the template `src/` — it generates typed stubs and `__init__.py` exports only.
 - Don't install plugins or skills that don't exist yet — verify availability first.

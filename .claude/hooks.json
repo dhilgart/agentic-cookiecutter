@@ -1,5 +1,11 @@
 {
   "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "command": "ruff format --quiet $FILE && ruff check --fix --quiet $FILE && mypy --no-error-summary $FILE || true"
+      }
+    ],
     "PreToolUse": [
       {
         "matcher": "git commit|git push",
