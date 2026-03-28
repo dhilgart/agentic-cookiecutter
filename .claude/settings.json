@@ -1,6 +1,8 @@
 {
   "permissions": {
     "allow": [
+      "Write(**/*)",
+      "Edit(**/*)",
       "cookiecutter *",
       "cruft *",
       "git status",
