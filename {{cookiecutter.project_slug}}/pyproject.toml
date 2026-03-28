@@ -1,0 +1,66 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "{{cookiecutter.project_slug}}"
+version = "0.1.0"
+description = "{{cookiecutter.description}}"
+authors = [{ name = "{{cookiecutter.author_name}}", email = "{{cookiecutter.author_email}}" }]
+requires-python = ">={{cookiecutter.python_version}}"
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "pytest-cov>=5.0",
+    "mypy>=1.10",
+    "ruff>=0.4",
+    {% if cookiecutter.use_hypothesis == "yes" %}"hypothesis>=6.0",{% endif %}
+    {% if cookiecutter.use_mutmut == "yes" %}"mutmut>=2.4",{% endif %}
+]
+
+[tool.ruff]
+target-version = "py312"
+line-length = 88
+src = ["src"]
+
+[tool.ruff.lint]
+select = [
+    "E", "F", "W",   # pycodestyle + pyflakes
+    "I",              # isort
+    "N",              # pep8-naming
+    "UP",             # pyupgrade
+    "S",              # bandit (security)
+    "B",              # bugbear
+    "A",              # flake8-builtins
+    "C4",             # flake8-comprehensions
+    "DTZ",            # flake8-datetimez
+    "T20",            # flake8-print
+    "ICN",            # flake8-import-conventions
+    "PIE",            # flake8-pie
+    "PT",             # flake8-pytest-style
+    "RSE",            # flake8-raise
+    "RET",            # flake8-return
+    "SLF",            # flake8-self
+    "SIM",            # flake8-simplify
+    "TCH",            # flake8-type-checking
+    "ARG",            # flake8-unused-arguments
+    "PTH",            # flake8-use-pathlib
+    "ERA",            # eradicate (commented-out code)
+]
+
+[tool.mypy]
+python_version = "{{cookiecutter.python_version}}"
+strict = true
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "--cov=src --cov-report=term-missing"
+
+[tool.coverage.run]
+source = ["src"]
+branch = true

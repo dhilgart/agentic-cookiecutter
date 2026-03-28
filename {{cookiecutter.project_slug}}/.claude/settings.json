@@ -1,0 +1,32 @@
+{
+  "plugins": {
+    "official": [
+      "code-review",
+      "feature-dev",
+      "ralph-loop",
+      "commit-commands",
+      "security-guidance"
+    ],
+    "skills": [
+      "mattpocock/skills/grill-me",
+      "mattpocock/skills/tdd",
+      "mattpocock/skills/write-a-prd",
+      "mattpocock/skills/ubiquitous-language",
+      "mattpocock/skills/write-a-skill",
+      "mattpocock/skills/git-guardrails"
+    ]
+  },
+  "permissions": {
+    "allow": [
+      "ruff *",
+      "mypy *",
+      "pytest *",
+      "git status",
+      "git diff *",
+      "git add *",
+      "git commit *",
+      "git checkout -b *",
+      "git push *"
+    ]
+  }
+}

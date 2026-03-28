@@ -1,0 +1,21 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "command": "ruff format --quiet $FILE && ruff check --fix --quiet $FILE && mypy --no-error-summary $FILE || true"
+      }
+    ],
+    "Stop": [
+      {
+        "command": "echo 'Verify: Do all tests pass? Is the change consistent with ARCHITECTURE.md?'"
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "git commit|git push",
+        "command": "python -c \"import sys; args = ' '.join(sys.argv); assert 'main' not in args, 'Never commit directly to main'\""
+      }
+    ]
+  }
+}

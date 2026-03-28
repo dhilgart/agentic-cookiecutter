@@ -1,0 +1,11 @@
+{
+  "project_name": "My Project",
+  "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '-').replace('_', '-') }}",
+  "package_name": "{{ cookiecutter.project_slug.replace('-', '_') }}",
+  "description": "A short description of the project.",
+  "author_name": "Your Name",
+  "author_email": "you@example.com",
+  "python_version": "3.12",
+  "use_hypothesis": ["no", "yes"],
+  "use_mutmut": ["no", "yes"]
+}
