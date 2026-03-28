@@ -1,8 +1,8 @@
 {
   "permissions": {
     "allow": [
-      "Write(**/*)",
-      "Edit(**/*)",
+      "Write",
+      "Edit",
       "cookiecutter *",
       "cruft *",
       "ruff *",

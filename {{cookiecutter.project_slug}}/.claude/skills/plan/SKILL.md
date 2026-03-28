@@ -1,3 +1,8 @@
+---
+name: plan
+description: Zoom-based progressive concretization — translate a request into a concrete story file
+---
+
 # Skill: Plan (Zoom-Based Progressive Concretization)
 
 ## Purpose

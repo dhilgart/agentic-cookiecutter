@@ -22,6 +22,7 @@ def test_file_tree_exists(generated_project: Path) -> None:
         "tests/conftest.py",
         "docs/decisions/0000-template.md",
         "docs/learnings/learnings.md",
+        "docs/instrumentation.md",
         "docs/mermaid-style-guide.md",
         "stories/template.md",
         "stories/done/.gitkeep",

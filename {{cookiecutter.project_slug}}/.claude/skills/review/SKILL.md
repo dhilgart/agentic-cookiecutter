@@ -1,3 +1,8 @@
+---
+name: review
+description: Anti-slop code review with structured rubric and confidence threshold
+---
+
 # Skill: Review (Anti-Slop Rubric)
 
 ## Purpose
