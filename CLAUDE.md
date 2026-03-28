@@ -30,6 +30,19 @@ Read these before making architectural decisions:
 - Jinja2 conditionals for opt-in features: `{% if cookiecutter.use_hypothesis == "yes" %}`.
 - Test the cookiecutter by generating a child and verifying it works, not by running template files directly.
 
+## Commit Convention
+
+This forge uses **Conventional Commits** enforced by commitizen + pre-commit.
+
+Valid commit types: `feat`, `fix`, `docs`, `style`, `refactor`, `perf`, `test`, `build`, `ci`, `chore`.
+
+Format: `type(scope): description` — scope is optional. Never use `review` or other non-standard types.
+
+Examples:
+- `feat: add hypothesis toggle to cookiecutter variables`
+- `fix(hooks): validate project_slug before generation`
+- `docs: update phase0 decision log`
+
 ## Cookiecutter Variables
 
 Defined in `cookiecutter.json`. Current variables:
@@ -46,7 +59,8 @@ Defined in `cookiecutter.json`. Current variables:
 ## Setup
 
 ```bash
-uv sync --all-extras
+uv sync
+uv run pre-commit install --hook-type commit-msg
 ```
 
 ## Commands
